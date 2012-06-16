@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(:version => 20120616161415) do
 
   create_table "street_events", :force => true do |t|
-    t.string   "name"
-    t.string   "event_type"
+    t.text     "name"
+    t.text     "event_type"
     t.datetime "start"
     t.datetime "end"
-    t.string   "address"
-    t.string   "borough"
+    t.text     "address"
+    t.text     "borough"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
