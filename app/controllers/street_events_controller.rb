@@ -6,7 +6,6 @@ def search
   lat = params[:lat]
   lng = params[:lng]
 
-
   if params[:start_date] and params[:end_date] and params[:borough]
     borough = params[:borough].capitalize
     @events = StreetEvent.where("start_date <= ? AND end_date >= ? AND borough = ?", start_date, end_date, borough)
@@ -27,10 +26,10 @@ def search
   @events.each do |event|
     parsed_event = {
       :name => event.name,
-      :address => event.address.squeeze(" "),
+      :address => event.address.squeeze(" ").split("between")[0],
       :start_date => event.start_date.strftime("%l:%M%p on %B %d, %Y"),
       :end_date => event.end_date.strftime("%l:%M%P on %B %d, %Y"),
-      :description => "A New York City street event.",
+      :description => event.address.squeeze(" "),
       :category => event.event_type,
       :borough => event.borough
     }
