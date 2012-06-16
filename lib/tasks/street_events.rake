@@ -14,8 +14,8 @@ namespace :street_data do
       event = StreetEvent.new
       event.name = info[8]
       event.event_type = info[9]
-      event.start = Chronic.parse(info[12])
-      event.end = Chronic.parse(info[13])
+      event.start_date = Chronic.parse(info[12])
+      event.end_date = Chronic.parse(info[13])
       event.address = info[18]
       event.borough = info[19]
       event.save

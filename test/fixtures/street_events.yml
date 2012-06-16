@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  type: 
-  start: MyString
-  end: MyString
-  address: MyString
-  borough: MyString
+  address: MyText
+  borough: MyText
+  end_date: 2012-06-16 14:01:46
+  name: MyText
+  start_date: 2012-06-16 14:01:46
+  event_type: MyText
 
 two:
-  name: MyString
-  type: 
-  start: MyString
-  end: MyString
-  address: MyString
-  borough: MyString
+  address: MyText
+  borough: MyText
+  end_date: 2012-06-16 14:01:46
+  name: MyText
+  start_date: 2012-06-16 14:01:46
+  event_type: MyText

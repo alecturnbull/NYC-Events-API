@@ -11,22 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120616161415) do
+ActiveRecord::Schema.define(:version => 20120616180142) do
 
   create_table "street_events", :force => true do |t|
-    t.text     "name"
-    t.text     "event_type"
-    t.datetime "start"
-    t.datetime "end"
     t.text     "address"
     t.text     "borough"
+    t.datetime "end_date"
+    t.text     "name"
+    t.datetime "start_date"
+    t.text     "event_type"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   add_index "street_events", ["borough"], :name => "index_street_events_on_borough"
-  add_index "street_events", ["end"], :name => "index_street_events_on_end"
+  add_index "street_events", ["end_date"], :name => "index_street_events_on_end_date"
   add_index "street_events", ["event_type"], :name => "index_street_events_on_event_type"
-  add_index "street_events", ["start"], :name => "index_street_events_on_start"
+  add_index "street_events", ["start_date"], :name => "index_street_events_on_start_date"
 
 end
