@@ -22,8 +22,22 @@ def search
   else
     @events = StreetEvent.all
   end
+
+  @events_json = []
+  @events.each do |event|
+    parsed_event = {
+      :name => event.name,
+      :address => event.address.squeeze(" "),
+      :start_date => event.start_date.strftime("%l:%M%p on %B %d, %Y"),
+      :end_date => event.end_date.strftime("%l:%M%P on %B %d, %Y"),
+      :description => "A New York City street event.",
+      :category => event.event_type,
+      :borough => event.borough
+    }
+    @events_json << parsed_event
+  end
   respond_to do |format|
-    format.json { render :json => @events }
+    format.json { render :json => @events_json }
   end
 end
 
