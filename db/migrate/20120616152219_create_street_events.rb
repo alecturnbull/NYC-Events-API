@@ -3,8 +3,8 @@ class CreateStreetEvents < ActiveRecord::Migration
     create_table :street_events do |t|
       t.text :name
       t.text :event_type
-      t.datetime :start
-      t.datetime :end
+      t.datetime :start_date
+      t.datetime :end_date
       t.text :address
       t.text :borough
 
